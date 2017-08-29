@@ -1,0 +1,12 @@
+--- # Este playbook crea Nginx y una pagina
+- name: Install Nginx
+  hosts: ec2
+  remote_user: ec2-user
+  vars_prompt:
+    - name: Nombre
+      prompt: Nombre
+      private: no
+      default: :v
+  become: yes
+  roles:
+    - web
